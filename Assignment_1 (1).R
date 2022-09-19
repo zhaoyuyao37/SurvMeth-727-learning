@@ -42,9 +42,11 @@ is.integer(B)
 library(haven)
 angell_stata <- read_dta("~ceciliayao/Desktop/Graduate Study/1st sem 2022-2023/SurvMeth 727/angell.dta")
 # 9. Read in the .txt version and store it in an object called angell_txt
-
+angell_txt <- read.table("~ceciliayao/Desktop/Graduate Study/1st sem 2022-2023/SurvMeth 727/angell.txt")
 # 10. Drop the first five observations in the angell_txt object
-
+library(dplyr)
+angell_txt_1 <- angell_txt %>% slice(-c(1, 2, 3, 4, 5))
+angell_txt_1
 # 11. Select columns 2 and 3 of the agell_stata object and store them in a new object called angell_small
 angell_small <- angell_stata[,c(2,3)]
 # R comes also with many built-in datasets. The "MASS" package, for example, comes with the "Boston" dataset
